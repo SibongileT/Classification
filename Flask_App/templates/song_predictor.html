@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block head %}
+
+{% endblock %}
+
+{%block body%}
+<div class="container">
+  <h1>{{hit}}</h1>
+  <figure>
+    <img src="{{cover_art}}" alt="Italian Trulli">
+    <figcaption>{{name}}</figcaption>
+    <audio
+        controls
+        src="{{audio}}">
+            Your browser does not support the
+            <code>audio</code> element.
+    </audio>
+  </figure>
+</div>
+ {% endblock %}
