@@ -1,6 +1,6 @@
 from flask import Flask, request, render_template
 import flask
-from song_functions import get_track_ID,get_track_features,get_track_audio
+from song_functions import get_track_ID,get_track_audio#get_track_features,get_track_audio
 
 app = Flask('Hit Predictor')
 
@@ -18,7 +18,7 @@ def predict_hit():
     print(track)
     try:
         track_id = get_track_ID(artist,track)
-        get_track_features(track_id)
+        #get_track_features(track_id)
         name,audio_preview,cover_art = get_track_audio(track_id)
         print(audio_preview)
         return flask.render_template('song_predictor.html',hit = 'Hit',name=name,
