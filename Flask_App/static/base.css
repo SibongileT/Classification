@@ -1,0 +1,19 @@
+html,body{
+  height:100%;
+  font-family: 'Monda', sans-serif;
+  background:
+  linear-gradient(
+    to bottom,rgba(241, 233, 219, 0.2),rgba(241, 233, 219, 0.2)
+  ),
+  url(BackgroundImage.jpg);
+  background-size: cover;
+  /*overflow-y: scroll;
+  overflow-x: hidden;*/
+}
+.bg-company-green{
+  background-color:rgba(30,215,96,0.2) !important;
+  font-family: 'Monda', sans-serif;
+}
+#main{
+  margin-top:100px !important;
+}
