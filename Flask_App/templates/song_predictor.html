@@ -1,18 +1,51 @@
 {% extends 'base.html' %}
 {% block head %}
-
+<style media="screen">
+  .heading{
+    color: #1DB954;
+    text-align: center;
+  }
+  .header{
+    color: white;
+    text-align: center;
+  }
+  #col1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+img {
+    max-width:100%;
+    height:auto;
+}
+.audio_controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+figcaption{
+  text-align:center;
+  color: white;
+  }
+</style>
 {% endblock %}
 
 {%block body%}
 <div class="container">
-  <h1>{{hit}}</h1>
-  <figure>
-    <img src="{{cover_art}}" alt="Italian Trulli">
-    <figcaption>{{name}}</figcaption>
-    <audio controls autoplay>
-        <source src="{{audio}}" type="audio/ogg">
-    </audio>
-
-  </figure>
+  <div class="row">
+    <div class="col" id='col1'>
+      <h1 class = 'header'>This song is predicted to be a: {{hit}}</h1>
+    </div>
+    <div class="col">
+        <figure>
+          <img src="{{cover_art}}" alt="Italian Trulli">
+          <figcaption>{{name}}</figcaption>
+          <div class="audio_controls">
+            <audio controls autoplay>
+                <source src="{{audio}}" type="audio/ogg">
+            </audio>
+      </div>
+    </div>
+  </div>
 </div>
  {% endblock %}

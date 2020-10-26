@@ -10,6 +10,9 @@ html,body{
   /*overflow-y: scroll;
   overflow-x: hidden;*/
 }
+.heading{
+  color: #1DB954
+}
 .bg-company-green{
   background-color:rgba(30,215,96,0.2) !important;
   font-family: 'Monda', sans-serif;
