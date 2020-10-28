@@ -27,24 +27,27 @@ figcaption{
   text-align:center;
   color: white;
   }
+.green{
+  color: #1DB954;
+}
 </style>
 {% endblock %}
 
 {%block body%}
 <div class="container">
   <div class="row">
-    <div class="col" id='col1'>
-      <h1 class = 'header'>This song is predicted to be a: {{hit}}</h1>
-    </div>
     <div class="col">
         <figure>
           <img src="{{cover_art}}" alt="Italian Trulli">
-          <figcaption>{{name}}</figcaption>
+          <figcaption style = "color:#013220"><b>{{name}}</b></figcaption>
           <div class="audio_controls">
             <audio controls autoplay>
                 <source src="{{audio}}" type="audio/ogg">
             </audio>
       </div>
+    </div>
+    <div class="col" id='col1'>
+      <h1 class = 'header'>{{name}} by {{artist}} is a: <b class="green">{{prediction}}</b></h1>
     </div>
   </div>
 </div>

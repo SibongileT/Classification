@@ -1,6 +1,6 @@
 from flask import Flask, request, render_template
 import flask
-from song_functions import get_track_ID,get_track_audio#get_track_features,get_track_audio
+from song_functions import get_track_ID,get_track_audio,get_track_features,get_predictions
 
 app = Flask('Hit Predictor')
 
@@ -20,8 +20,10 @@ def predict_hit():
         track_id = get_track_ID(artist,track)
         #get_track_features(track_id)
         name,audio_preview,cover_art = get_track_audio(track_id)
+        track_features = get_track_features(track_id)
+        prediction = get_predictions(track_features)
         print(audio_preview)
-        return flask.render_template('song_predictor.html',hit = 'Hit',name=name,
+        return flask.render_template('song_predictor.html',prediction=prediction,name=name,artist=artist,
                                   audio=audio_preview,cover_art=cover_art)
     except:
         return flask.render_template("error.html")
