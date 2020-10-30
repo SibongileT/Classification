@@ -67,11 +67,11 @@ def get_encoded_artist(artist,df,x):
 def get_predictions(track_features):
 
     scaler = StandardScaler()
-    artist_df = pd.read_csv("/Users/sibongiletoure/Desktop/Metis/Git/song_classification/artist_df.csv")
-    filename = '/Users/sibongiletoure/Desktop/Metis/Git/song_classification/finalized_model.sav'
+    artist_df = pd.read_csv("model/artist_df.csv")
+    filename = 'model/finalized_model.sav'
     PREDICT = pickle.load(open(filename, 'rb'))
 
-    scaledfile = '/Users/sibongiletoure/Desktop/Metis/Git/song_classification/finalized_scale.sav'
+    scaledfile = 'model/finalized_scale.sav'
     scaler = pickle.load(open(scaledfile, 'rb'))
 
     x = [track_features[2:]]

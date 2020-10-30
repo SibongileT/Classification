@@ -1,6 +1,7 @@
 from flask import Flask, request, render_template
 import flask
 from song_functions import get_track_ID,get_track_audio,get_track_features,get_predictions
+import os
 
 app = Flask('Hit Predictor')
 
@@ -31,4 +32,5 @@ def predict_hit():
 
 
 ## This just gets flask running
-app.run(port=5000, debug=True)
+port = int(os.environ.get("PORT", 5000))
+app.run(host="0.0.0.0", port=port)
