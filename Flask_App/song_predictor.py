@@ -3,7 +3,7 @@ import flask
 from song_functions import get_track_ID,get_track_audio,get_track_features,get_predictions
 import os
 
-app = Flask('Hit Predictor')
+app = Flask(__name__)
 
 ## Put your work here. You are also free to use static/css and templates/ if you would like
 @app.route('/')
@@ -32,5 +32,6 @@ def predict_hit():
 
 
 ## This just gets flask running
-port = int(os.environ.get("PORT", 5000))
-app.run(host="0.0.0.0", port=port)
+if __name__ == "__main__":
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host="0.0.0.0", port=port)
