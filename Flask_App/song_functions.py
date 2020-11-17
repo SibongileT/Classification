@@ -5,8 +5,8 @@ import pickle
 from sklearn.preprocessing import StandardScaler
 import pandas as pd
 
-client_id = 'b69091a51565464da8e8f5315482bfcd'
-client_secret = 'ff3e70920cdf42d1bb135adba578aa74'
+client_id = 'SECRET_ID'
+client_secret = 'SECRET_KEY'
 client_credentials_manager = SpotifyClientCredentials(client_id=client_id, client_secret=client_secret)
 sp = spotipy.Spotify(client_credentials_manager=client_credentials_manager) #spotify object to access API
 
